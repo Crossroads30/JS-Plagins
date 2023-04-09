@@ -1,17 +1,50 @@
+.vmodal {}
+
+.vmodal.open .modal__overlay,
+.vmodal.open .modal__wrapper {
+   opacity: 1;
+   z-index: 1000;
+}
+
+.vmodal.hide .modal__overlay,
+.vmodal.hide .modal__wrapper {
+   opacity: 1;
+   z-index: 1000;
+}
+
+.vmodal.open .modal__overlay {
+   background-color: rgba(41, 41, 41, 0.6);
+}
+
+.vmodal.open .modal__wrapper {
+   transform: translateY(136px);
+}
+
+.vmodal.hide .modal__overlay {
+   background-color: rgba(41, 41, 41, 0);
+}
+
+.vmodal.hide .modal__wrapper {
+   transform: translateY(-560px);
+}
+
+.modal__wrapper, .modal__overlay {
+   opacity: 0;
+   z-index: -1;
+}
 .conteiner {
    max-width: 1280px;
    margin: 0 auto;
 }
+
 .modal__overlay {
    position: fixed;
-   display: flex;
-   justify-content: center;
-   align-items: center;
    top: 0;
    left: 0;
    width: 100%;
    height: 100%;
-   background-color: rgba(41, 41, 41, 0.6);
+   background-color: rgba(41, 41, 41, 0);
+   transition: background-color .3s ease-in;
    ;
 }
 
@@ -19,14 +52,20 @@
    display: flex;
    flex-direction: column;
    top: 136px;
-   width: 952px;
-   height: 552px;
+   width: 100%;
+   max-width: 952px;
+   /* height: 552px; */
    background: transparent;
+   margin: 0 auto;
+   transform: translateY(-560px);
+   transition: transform .3s ease-in;
 }
 
 .modal__window {
-   width: 900px;
-   height: 500px;
+   display: flex;
+   justify-content: space-between;
+   max-width: 900px;
+   /* height: 500px; */
    background-color: #FAFAFA;
    border-radius: 9px;
    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -40,6 +79,53 @@
    border-radius: 100px;
 }
 
-.modal__close-btn span {
+/* .modal__close-btn span {} */
 
+.modal__content {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 50px 0 90px;
+}
+
+.modal__image {
+   width: 100%;
+   height: 100%;
+}
+
+.pet__title {
+   font-family: 'Georgia';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 35px;
+   line-height: 130%;
+   letter-spacing: 0.06em;
+   color: #000000;
+   margin-bottom: 10px;
+}
+
+.pet__subtite {
+   font-family: 'Georgia';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 20px;
+   line-height: 115%;
+   letter-spacing: 0.06em;
+   color: #000000;
+
+}
+
+.pet__info {
+   font-family: 'Georgia';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 15px;
+   line-height: 110%;
+   letter-spacing: 0.06em;
+   color: #000000;
+}
+
+.pet__parameters {
+   list-style: disc;
+   padding-left: 15px;
 }
