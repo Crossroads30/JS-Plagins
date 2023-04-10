@@ -72,11 +72,20 @@
 }
 
 .modal__close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
    width: 50px;
    height: 52px;
    align-self: flex-end;
    border: 2px solid #F1CDB3;
    border-radius: 100px;
+   cursor: pointer;
+}
+
+.modal__close-btn span {
+  line-height: 180px;
+  font-size: 25px;
 }
 
 /* .modal__close-btn span {} */
