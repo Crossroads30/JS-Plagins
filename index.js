@@ -98,8 +98,9 @@ const data = [
   }
 ]
 
+
 const modal = $.modal({
-  id: data.id,
+  //id: data.id,
   closable: true,
   image: `<img src="assets/pets-jennifer.png" class="modal__image">`
   ,

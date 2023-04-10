@@ -1,15 +1,24 @@
 Element.prototype.appendAfter = function (element) {// метод для реализации футера в модалку
   element.parentNode.insertBefore(this/* - это Элемент(в данном случае футер)*/, element.nextSibling)
 }
+function noop() {}//пустая функция
 
 function _createModalFooter(buttons = []) {// создания футера
   if (buttons.length === 0) {
     return document.createElement('div')
   }
-
   const wrapper = document.createElement('div')
   wrapper.classList.add('modal__footer')
+  
+  buttons.forEach(btn => {// создание кнопок
+    const $btn = document.createElement('button')
+    $btn.textContent = btn.text
+    $btn.classList.add('btn')
+    $btn.classList.add(`btn-${btn.type || 'secondary'}`)
+    $btn.onclick = btn.handler || noop//(noop это пустая функция, если кнопок нет) 
 
+    wrapper.appendChild($btn)
+  })
 
   return wrapper
 }
